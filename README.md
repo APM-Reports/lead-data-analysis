@@ -6,17 +6,19 @@ Data Reporter: Will Craft, <wcraft@apmreports.org>
 Any questions about the data should be directed to Will Craft.
 
 ## What's Here?
-APM Reports analyzed thousands of individual lead tests and hundreds of system-wide lead levels from two sources to investigate the impact of relying on first-liter sampling in lead regulations. We gathered state-wide sampling data in Michigan and sampling data from 650 homes in Chicago, IL and found that lead levels are sometimes two to three times higher when water from within the lead service line is tested.
+APM Reports analyzed thousands of individual lead tests and hundreds of system-wide lead levels from two sources to investigate the impact of relying on first-liter sampling in lead regulations. We gathered state-wide sampling data in Michigan and sampling data from 650 homes in Chicago, IL and found that lead levels are sometimes two to three times higher when water from deeper in the plumbing is tested.
 
 The raw data is in `data/source` and the cleaned data is in `data/processed`. The notebooks used for analysis are in `notebooks`.
 
 ## Analysis
 
-In Michigan, a change to state lead regulations required utilities with lead service lines to start collecting two samples, the first and fifth liter, and use the higher of the two when calculating their 90th-percentile lead level.  APM Reports acquired statewide water utility 90th-percentile values for 2010-2019 and individual lead samples from 2016-2019 through an open records request.  We focused on utilities that included the fifth liter sample in 2019 to isolate how changing their sampling protocol changed their reported lead levels. Our investigation found that the average 90th-percentile lead levels were two to three times higher in 2019, when utilities began including a fifth liter, than in any of the previous nine years. This difference was also apparent when looking at individual lead samples. On average, individual fifth-liter samples had two and half times the amount of lead as first liter samples.
+In Michigan, a change to state lead regulations required utilities with lead service lines to start collecting two samples, the first and fifth liter, and use the higher of the two when calculating their 90th-percentile lead level.  APM Reports acquired statewide water system 90th-percentile values for 2010-2019 and individual lead samples from 2016-2019 through an open records request.  In our analysis, we focused on utilities that included the fifth liter sample in 2019 to isolate how the change in sampling protocol affected their reported lead levels.
 
-In 2016, the Chicago Water Department started an extensive lead testing program as a part of a water quality study, testing the home of any customer that requested it. In the past four years, thousands of customers have requested the city test their water. Homes with elevated lead levels in their first test then received more extensive testing. In 650 of those homes, the city tested each of the first 10 liters from the tap. We calculated the 90th-percentile value of each liter and found that the highest lead levels were found in the 8th-10th liters.
+Our investigation found that the average 90th-percentile lead levels were two to three times higher in 2019, when utilities began including the fifth liter, than in any of the previous nine years. This difference was also apparent when looking at individual lead samples. On average, individual fifth-liter samples had two and half times the amount of lead as first liter samples.
 
-The data from Chicago also allowed us to test how different lead testing protocols can give different results, without the underlying conditions changing at all. APM Reports calculated different 90th-percentile values using the current Lead and Copper Rule, Michigan’s Lead and Copper Rule (highest of the first and fifth liter samples), and by calculating the 90th-percentile lead level by taking the highest of each home’s 10 samples. Using the current LCR, the data’s lead levels are 16 ppb, while under the MI LCR, the 90th-percentile value would be 29.5 ppb. Using the highest of all 10 samples at each home tested, the lead levels would be 36.9 ppb.
+In 2016, the Chicago Water Department started an extensive lead testing program as a part of a water quality study, testing the home of any customer that requested it. In the past four years, thousands of customers have requested the city test their water. Homes with elevated lead levels in their first test then received more extensive testing. In 650 homes, the city tested each of the first 10 liters from the tap. We calculated the 90th-percentile value of each liter and found that the highest lead levels were found in the 8th-10th liters.
+
+The data from Chicago also allowed us to test how different lead testing protocols can give different results, without the underlying conditions changing. APM Reports calculated different 90th-percentile values using the current Lead and Copper Rule, Michigan’s Lead and Copper Rule (highest of the first and fifth liter samples), and by calculating the 90th-percentile lead level by taking the highest of each home’s 10 samples. Using the current LCR, the data’s lead levels are 16 ppb, while under the MI LCR, the 90th-percentile value would be 29.5 ppb. Using the highest of all 10 samples at each home tested, the lead levels would be 36.9 ppb.
 
 APM Reports found that first-liter sampling often misses the highest levels of lead. If the utility is consistently missing the highest lead levels, they are operating with limited data and will not be effective at reducing lead at the tap. A lack of accurate lead testing data starts a cascading effect of policies and decisions based on misleading information. Utilities are testing water with the lowest lead levels, which leads to corrosion control that is not optimized to reduce high lead levels. Utilities then reduce the amount of testing they do as they spend time under the action level, which leaves lead lines in the ground for years.
 
@@ -55,7 +57,7 @@ File: `data/processed/mi_system_samples_2016-2019.csv`
 * `system_name`
   * Water system name.
 * `sitecode`
-  * sitecode TK 
+  * sitecode TK
 * `lab_id`
   * ID of lab that tested the sample.
 * `for_compliance`
@@ -73,7 +75,7 @@ File: `data/processed/mi_system_samples_2016-2019.csv`
 * `unit`
   * The unit of the sampled lead level.
 * `accepted_rejected`
-  * Was the sample accepted or rejected, either an `A` for accepted or an `R` for rejected. According to Michigan, "Rejected... does not mean rejected because there was a problem with the sample. Sample marked “rejected” so database would excluded it from the 90th because it was not the highest result from the site. Should be accompanied by an “NH” in the next column indicating it was Not Highest result from site"
+  * Whether the sample accepted or rejected. Values are either an `A` for accepted or an `R` for rejected. According to Michigan, "Rejected... does not mean rejected because there was a problem with the sample. Sample marked “rejected” so database would excluded it from the 90th (percentile calculation) because it was not the highest result from the site. Should be accompanied by an “NH” in the next column indicating it was Not Highest result from site"
 * `reject_reason`
   * Column used to indicate that sample was not the highest result from sample site.
 * `lead_level_ppb`
