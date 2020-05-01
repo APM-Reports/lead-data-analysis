@@ -1,9 +1,9 @@
-## TITLE TK Data Analysis
+## Buried Lead
 Story: LINKTK<br>
 Reporter: Lauren Rosenthal, <lrosenthal@apmreports.org><br>
 Data Reporter: Will Craft, <wcraft@apmreports.org>
 
-Any questions about the data should be directed to Will Craft. 
+Any questions about the data should be directed to Will Craft.
 
 ## What's Here?
 APM Reports analyzed thousands of individual lead tests and hundreds of system-wide lead levels from two sources to investigate the impact of relying on first-liter sampling in lead regulations. We gathered state-wide sampling data in Michigan and sampling data from 650 homes in Chicago, IL and found that lead levels are sometimes two to three times higher when water from within the lead service line is tested.
@@ -37,7 +37,7 @@ File: `data/processed/mi_system_90th_percentiles_2010-2019.csv`
 * `system_population`
   * Population served by the water system.
 * `last_monitoring_period_end`
-  * Date of the last monitoring period for the water system. Water systems have different periods they have to sample by, based on their latest 90th-percentile lead level.
+  * Date of the last monitoring period for the water system. Water systems have different periods they have to sample by, based on previous lead levels.
 * `90th_percentile_ppm`
 	 * 90th-percentile lead level, measured in parts per million.
 * `90th_percentile`
@@ -55,17 +55,27 @@ File: `data/processed/mi_system_samples_2016-2019.csv`
 * `system_name`
   * Water system name.
 * `sitecode`
+  * sitecode TK 
 * `lab_id`
+  * ID of lab that tested the sample.
 * `for_compliance`
+  * Was the sample for compliance sampling.
 * `collect_date`
+  * Date of sample collection.
 * `address`
+  * Address of sample collection.
 * `first_or_fifth`
+  * Was the sample first or fifth liter. Blanks mean first liter. The `fifth_liter` column is a standardized version of this column.
 * `rule`
+  * What chemical was being measured.
 * `lead_level`
+  * The lead level of the sample. The `lead_level_ppb` is a version of this column, standardized to be parts per billion.
 * `unit`
+  * The unit of the sampled lead level.
 * `accepted_rejected`
-  * Was the sample accepted or rejected? There
+  * Was the sample accepted or rejected, either an `A` for accepted or an `R` for rejected. According to Michigan, "Rejected... does not mean rejected because there was a problem with the sample. Sample marked “rejected” so database would excluded it from the 90th because it was not the highest result from the site. Should be accompanied by an “NH” in the next column indicating it was Not Highest result from site"
 * `reject_reason`
+  * Column used to indicate that sample was not the highest result from sample site.
 * `lead_level_ppb`
   * Standardized lead level, measured in parts per billion. This is an added column.
 * `fifth_liter`
