@@ -57,7 +57,7 @@ File: `data/processed/mi_system_samples_2016-2019.csv`
 * `system_name`
   * Water system name.
 * `sitecode`
-  * sitecode TK
+  * Code that identifies site type. APM Reports has requested what these mean and will update this page when we have the definitions. 
 * `lab_id`
   * ID of lab that tested the sample.
 * `for_compliance`
