@@ -1,5 +1,5 @@
 ## Buried Lead
-Story: LINKTK<br>
+Story: [Buried Lead](https://www.apmreports.org/story/2020/05/04/epa-lead-pipes-drinking-water)<br>
 Reporter: Lauren Rosenthal, <lrosenthal@apmreports.org><br>
 Data Reporter: Will Craft, <wcraft@apmreports.org>
 
@@ -8,7 +8,7 @@ Any questions about the data should be directed to Will Craft.
 ## What's Here?
 APM Reports analyzed thousands of individual lead tests and hundreds of system-wide lead levels from two sources to investigate the impact of relying on first-liter sampling in lead regulations. We gathered state-wide sampling data in Michigan and sampling data from 650 homes in Chicago, IL and found that lead levels are sometimes two to three times higher when water from deeper in the plumbing is tested.
 
-The raw data is in `data/source` and the cleaned data is in `data/processed`. The notebooks used for analysis are in `notebooks`. You can view the Chicago analysis [here](https://nbviewer.jupyter.org/github/APM-Reports/lead-data-analysis/blob/master/notebooks/chicago_data_analysis.ipynb) and the Michigan analysis [here](https://nbviewer.jupyter.org/github/APM-Reports/lead-data-analysis/blob/master/notebooks/MI_LCR_testing_data.ipynb)
+The raw data is in `data/source` and the cleaned data is in `data/processed`. The notebooks used for analysis are in `notebooks`. You can view the Chicago analysis [here](https://nbviewer.jupyter.org/github/APM-Reports/lead-data-analysis/blob/master/notebooks/chicago_data_analysis.ipynb) and the Michigan analysis [here](https://nbviewer.jupyter.org/github/APM-Reports/lead-data-analysis/blob/master/notebooks/MI_LCR_testing_data.ipynb).
 
 ## Analysis
 
@@ -57,7 +57,7 @@ File: `data/processed/mi_system_samples_2016-2019.csv`
 * `system_name`
   * Water system name.
 * `sitecode`
-  * Code that identifies site type. APM Reports has requested what these mean and will update this page when we have the definitions. 
+  * Code that identifies site type. APM Reports has requested what these mean and will update this page when we have the definitions.
 * `lab_id`
   * ID of lab that tested the sample.
 * `for_compliance`
